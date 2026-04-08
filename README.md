@@ -9,3 +9,9 @@ go mod tidy
 ## start the server and client on two seperate terminals :
 
 go run \*.go
+
+unary output :
+![alt text](assets/unary.png)
+
+server streaming
+![alt text](server-streaming.png)

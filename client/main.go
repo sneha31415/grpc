@@ -21,7 +21,17 @@ func main() {
 	defer conn.Close()
 	
 	client := pb.NewGreetServiceClient(conn)
-	callSayHello(client)
+
+	names := &pb.NamesList{
+		Names:[]string{"Sneha", "Shubham", "Mummy", "Papa"},
+	}
+
+	// unary rpc call
+	// callSayHello(client)
+
+	// Server Streaming RPC
+	callSayHelloServerStream(client, names)
+
 
 }
 
