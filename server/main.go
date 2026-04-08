@@ -18,9 +18,9 @@ type helloServer struct {
 }
 func main(){
 	// listener
-	lis, err := net.Listen("tpc", port)
+	lis, err := net.Listen("tcp", port)
 	if err != nil {
-		log.Fatal("failed to start server %v", err)
+		log.Fatalf("failed to start server %v", err)
 	}
 	grpcServer := grpc.NewServer()
 	pb.RegisterGreetServiceServer(grpcServer, &helloServer{})
