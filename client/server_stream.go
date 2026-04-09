@@ -28,3 +28,5 @@ func callSayHelloServerStream(client pb.GreetServiceClient, names *pb.NamesList)
 	log.Printf("Streaming finished")
 
 }
+
+
