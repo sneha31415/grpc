@@ -26,11 +26,14 @@ func main() {
 		Names:[]string{"Sneha", "Shubham", "Mummy", "Papa"},
 	}
 
-	// unary rpc call
+	//--- unary rpc call ---
 	// callSayHello(client)
 
-	// Server Streaming RPC
-	callSayHelloServerStream(client, names)
+	// --- Server Streaming RPC ---
+	// callSayHelloServerStream(client, names)
+
+	// client streaming rpc
+	callSayHelloClientStreaming(client, names)
 
 
 }
