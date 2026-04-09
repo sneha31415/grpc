@@ -1,34 +1,48 @@
-## Generate Go files from `.proto`
+# gRPC Project - Go
+
+A simple gRPC project with unary, server streaming, client streaming, and bidirectional streaming examples.
+
+---
+
+## Setup
+
+### 1. Generate Go code from proto
 
 ```bash
 protoc --go_out=. --go-grpc_out=. proto/greet.proto
 ```
 
-## Sync dependencies
+### 2. Sync dependencies
 
 ```bash
 go mod tidy
 ```
 
-## Run server and client
+### 3. Run server and client
 
-Run in separate terminals from their folders:
+Open two terminals. From each folder, run:
 
 ```bash
 go run *.go
 ```
 
-Unary output:
+---
+
+## Output Examples
+
+**Unary RPC:**
 ![Unary output](assets/unary.png)
 
-Server streaming output:
+**Server Streaming RPC:**
 ![Server streaming output](assets/server-streaming.png)
 
-Client streaming output:
+**Client Streaming RPC:**
 ![Client streaming output](assets/client-streaming.png)
 
-bi-directional-streaming
-![alt text](assets/bi-directional-streaming.png)
+**Bidirectional Streaming RPC:**
+![Bidirectional streaming output](assets/bi-directional-streaming.png)
+
+---
 
 ## gRPC service method types
 

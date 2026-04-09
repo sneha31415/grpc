@@ -16,6 +16,7 @@ func callSayHelloBidirectionalStreaming(client pb.GreetServiceClient, names *pb.
 	 if err != nil {
 		log.Fatalf("could not send names: %v", err )
 	 }
+	//  go channel used to signal completion
 	 waitc := make(chan struct{})
 
 	// go routine
