@@ -24,6 +24,9 @@ Unary output:
 Server streaming output:
 ![Server streaming output](assets/server-streaming.png)
 
+Client streaming output:
+![Client streaming output](assets/client-streaming.png)
+
 ---
 
 ## gRPC service method types
