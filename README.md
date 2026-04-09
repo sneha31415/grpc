@@ -27,7 +27,8 @@ Server streaming output:
 Client streaming output:
 ![Client streaming output](assets/client-streaming.png)
 
----
+bi-directional-streaming
+![alt text](assets/bi-directional-streaming.png)
 
 ## gRPC service method types
 
@@ -135,11 +136,19 @@ func (s *helloServer) SayHelloBidirectionalStreaming(stream pb.GreetService_SayH
 }
 ```
 
+**Quick note**
+
+- `go func()` is used on the client to receive in parallel while sending.
+- `waitc` is used to wait until the receive loop finishes, so the program does not exit early i.e if send completes first.
+- The server does not need `go func()` or `waitc` here because it usually handles `Recv()` and `Send()` in one loop.
+
+```go
+waitc := make(chan struct{})
+go func() {
+	// receive loop
+	close(waitc)
+}()
+<-waitc
+```
+
 ---
-
-## Recap
-
-- Unary: `ctx + req -> (res, err)`
-- Server stream: `req + stream -> err`
-- Client stream: `stream -> err` (recv many, close with one response)
-- Bidi stream: `stream -> err` (recv/send many)

@@ -33,7 +33,10 @@ func main() {
 	// callSayHelloServerStream(client, names)
 
 	// client streaming rpc
-	callSayHelloClientStreaming(client, names)
+	// callSayHelloClientStreaming(client, names)
+
+	// bi-streaming
+	callSayHelloBidirectionalStreaming(client, names)
 
 
 }
