@@ -34,5 +34,5 @@ func callSayHelloClientStreaming(client pb.GreetServiceClient, names *pb.NamesLi
 	if err != nil {
 		log.Fatalf("Error while recieving %v", err)
 	}
-	log.Printf("%v", res.Message)
+	log.Printf("%v", res.Messages)
 }
